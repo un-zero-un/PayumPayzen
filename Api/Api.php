@@ -180,7 +180,7 @@ class Api
         }
         $content .= $this->config['certificate'];
 
-        return $hashed ? sha1($content) : $content;
+        return $hashed ? hash_hmac('sha256', $content, $this->config['certificate']) : $content;
     }
 
     /**
@@ -209,7 +209,7 @@ class Api
      */
     private function getEndpoint()
     {
-        return 'https://paiement.systempay.fr/vads-payment/';
+        return 'https://secure.payzen.eu/vads-payment/';
     }
 
     /**
