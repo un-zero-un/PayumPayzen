@@ -46,6 +46,7 @@ class PayzenGatewayFactory extends GatewayFactory
             'payum.action.sync'            => new Action\SyncAction(),
             'payum.action.refund'          => new Action\RefundAction(),
             'payum.action.status'          => new Action\StatusAction(),
+            'payum.action.notify'          => new Action\NotifyAction(),
         ]);
 
         $defaultOptions = [];
