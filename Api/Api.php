@@ -180,7 +180,7 @@ class Api
         }
         $content .= $this->config['certificate'];
 
-        return $hashed ? hash_hmac('sha256', $content, $this->config['certificate']) : $content;
+        return $hashed ? base64_encode(hash_hmac('sha256', $content, $this->config['certificate'], true)) : $content;
     }
 
     /**
